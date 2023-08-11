@@ -1,0 +1,16 @@
+main{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: rgb(240, 237, 234);
+    padding: 2rem 1.5rem;
+    max-width: 500px;
+}
+
+form h1 {
+    text-align: center;
+}

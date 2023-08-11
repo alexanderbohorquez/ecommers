@@ -1,0 +1,24 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    
+}
+
+.image-container {
+    width: 80px; /* Tamaño fijo deseado para el contenedor */
+    height: 80px; /* Tamaño fijo deseado para el contenedor */
+    margin-right: 1rem; /* Espaciado opcional entre la imagen y el contenido */
+    overflow: hidden; /* Para recortar las imágenes más grandes */
+}
+
+.image-container img {
+    width: 100%; /* Hace que la imagen se ajuste al ancho del contenedor */
+    height: 100%; /* Hace que la imagen se ajuste al alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar la relación de aspecto */
+}

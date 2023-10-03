@@ -29,8 +29,8 @@ function ProductCard({ product }) {
                 >
                     <img
                         className="d-block w-100"
-                        src={product.images[currentImage].url}
-                        alt={`Product Image ${currentImage + 1}`}
+                        src={product.images[currentImage]}
+                        alt={`Product Images ${currentImage + 1}`}
                         style={{
                             height: hovered ? "160px" : "150px",
                             objectFit: "contain",

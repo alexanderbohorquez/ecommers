@@ -16,7 +16,7 @@ export const favoriteSlice = createSlice({
 export const getFavoritesThunk = () => dispatch => {
     dispatch(setIsLoading(true))
     axios
-    .get('https://e-commerce-api-v2.academlo.tech/api/v1/cart', getConfig())
+    .get('https://ecommers-app-zbyz.onrender.com/carts', getConfig())
     .then(resp => dispatch(setFavorites(resp.data)))
     .catch(error => console.error(error))
     .finally (() => dispatch(setIsLoading(false)))
@@ -26,7 +26,7 @@ export const getFavoritesThunk = () => dispatch => {
 export const addProductThunk = (data) => dispatch => {
     dispatch(setIsLoading(true))
     axios
-    .post ("https://e-commerce-api-v2.academlo.tech/api/v1/cart", data, getConfig())
+    .post ("https://ecommers-app-zbyz.onrender.com/carts", data, getConfig())
     .then (resp => dispatch(getFavoritesThunk()))
     .catch(error => console.error(error))
     .finally (() => dispatch(setIsLoading(false)))
@@ -41,7 +41,7 @@ export const updateFavoriteThunk = (id, newRate) =>
         }
 
         axios
-        .put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, body, getConfig())
+        .put(`https://ecommers-app-zbyz.onrender.com/carts/${id}`, body, getConfig())
         .then(() => dispatch (getFavoritesThunk() ))
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))
@@ -52,7 +52,7 @@ export const purchaseCartThunk = () => dispatch => {
     dispatch(setIsLoading(true))
 
     axios
-    .post("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {}, getConfig())
+    .post("https://ecommers-app-zbyz.onrender.com/purchases", {}, getConfig())
     .then(() => dispatch(getFavoritesThunk()))
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))

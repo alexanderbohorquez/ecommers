@@ -28,13 +28,13 @@ const ProductDetails = () => {
 
     const getDetail = () => {
         axios
-            .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}/`)
+            .get(`https://ecommers-app-zbyz.onrender.com/products/${id}/`)
             .then(resp => {
                 console.log(resp.data);
                 setProductDetail(resp.data);
                 const productId = resp.data.id;
                 axios
-                    .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?recommended_for=${productId}`)
+                    .get(`https://ecommers-app-zbyz.onrender.com/products/${productId}`)
                     .then(recommendedResp => {
                         setRecommendedProducts(recommendedResp.data);
                     })
@@ -77,7 +77,7 @@ const ProductDetails = () => {
                 <Row>
                     <Col>
                         <Carousel interval={null} indicators={false} style={{ maxWidth: "500px", padding: "20px 20px" }}>
-                            {productDetail.images && productDetail.images.map((image, index) => (
+                            {productDetail.image && productDetail.images.map((image, index) => (
                                 <Carousel.Item key={index}>
                                     <img
                                         className="d-block w-100"
